@@ -1,0 +1,59 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+*{margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif;}
+ul{list-style: none;}
+a{text-decoration: none;color: #000;}
+
+html, body{width: 100%; height: 100%;}/*여기서 height:100%가 없으면 밑에 height 100%가 동작하지않는다. 끝을 정해주지 않았기때문*/
+.section{width: 100%; height: 100%; position: relative;background-size: cover; display: flex; align-items: center; justify-content: center;}
+.section-wrap{max-width: 1200px; height: 600px; margin: 0 auto; z-index: 888;text-align: center;font-size: 36px;padding: 40px;box-sizing: border-box; overflow: hidden;}
+.section-wrap .text{margin-bottom: 200px; color: #fff;}
+.section-wrap .start{width: 200px; height: 60px; line-height: 56px; background-color: #74B7CD; font-size: 22px; border-radius: 10px;margin: 0 auto;}
+.section-wrap .curator1{max-width: 1200px; height: 100px; flex-direction: row; flex-wrap: nowrap; display: flex; margin-bottom: 40px; animation: left 35s infinite linear; flex-shrink: 0;}
+.section-wrap .curator2{max-width: 1200px; height: 100px; display: flex; flex-wrap: nowrap; flex-direction: row-reverse; animation: right 35s infinite linear; flex-shrink: 0;}
+.section-wrap img{width: 100px;height: 100px; margin: 0 5px 0 5px;}
+.section-wrap .community{width: 200px; height: 60px; line-height: 56px; background-color: #74B7CD; font-size: 22px; border-radius: 10px;margin: 0 auto;}
+
+        @keyframes left {
+            0%{transform: translateX(0);}
+            100%{transform: translateX(-94%);}
+        }
+        @keyframes right {
+            0%{transform: translateX(0);}
+            100%{transform: translateX(94%);}
+        }
+
+.section:nth-child(2){background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("../images/game/among_us.jpg");}
+.section:nth-child(3){background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("../images/free-online-games.jpg");}
+.section:nth-child(4){background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("../images/gaming-newbies-stadia-videoSixteenByNineJumbo1600.jpg");}
+
+.nav{position: absolute; top: 0; z-index: 999; width: 100%; height: 70px; background-color: rgba(0,0,0,1);}
+.nav.on{position: fixed; top: 0;}
+.nav .nav-wrap{max-width: 1200px;height: 100%; margin: 0 auto; display: flex; align-items: center;}
+.nav .logo{width: 40px; height: 40px;}
+.nav ul{flex-basis: 1160px; margin: 0 auto; height: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center; transition: 0.5s;}
+.nav ul.on{max-width: 900px;}
+
+.nav ul li{flex-basis: 20%; text-align: center; letter-spacing: -1px;}
+.nav ul li a{display: inline-block; width: 100%; font-size: 14px; color: #fff; position: relative;}
+.nav ul li a::after{content: ""; position: absolute; width: 15%; height: 2px;background-color: #fff; bottom: -5px; left: 50%; transform: translateX(-50%) scaleX(0); transition: 0.3s;}
+.nav ul li:hover a::after,
+.nav ul li.on a::after{transform: translateX(-50%) scaleX(1);}
+.nav ul li.on{font-weight: bold;}
+
+.bar{position: fixed; width: 0; height: 5px; background-color: #479; top: 0; z-index: 99;}
+
+.aside{position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; border: 1px solid #ddd; background-color: #fff; border-radius: 5px; cursor: pointer; z-index: 4; display: none;}
+.aside i{font-size: 25px; text-align: center; line-height: 50px; display: block;}
+
+.floating{position: absolute; right: 40px; top: 100px; width: 100px; height: 240px; background-color: #74B7CD; z-index: 999; border-radius: 10px; text-align: center;}
+.floating ul li{height: 60px; line-height: 60px; letter-spacing: -1px;}
+.floating ul li a{font-size: 14px; color: #fff; display: inline-block; width: 100%;}
+.floating .arrow{height: 50px; background-color: rgba(255,255,255,0.4); cursor: pointer;}
+.floating .arrow i{font-size: 24px;line-height: 50px; color: #fff;}
+
+.indicator{position: fixed; right: 40px; top: 50%; transform: translateY(-50%);}
+.indicator ul li{margin: 20px 0;}
+.indicator ul li a{color: #fff;}
+.indicator ul li.on a{color: #74B7CD;}
